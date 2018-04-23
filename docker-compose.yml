@@ -2,12 +2,22 @@ version: '2'
  
 services:
 
-  proxy:
-    build:
-      context:  ./nginx
-      dockerfile: Dockerfile
-    ports:
+  dotnetservice:
+    image: mleybourne/dotnetserve
+    ports: 
+      - "8080:5000"
+
+  goservice:
+    image: mleybourne/goserve
+    ports: 
       - "8081:8081"
+
+  nodeservice:
+    image: mleybourne/nodeserve
+    ports: 
       - "8082:8082"
+
+  pyservice:
+    image: mleybourne/pyserve
+    ports: 
       - "8083:8083"
-      - "5000:5000"

@@ -12,6 +12,7 @@ import (
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", index)
+	log.Println("Listening on port 8081")
 	log.Fatal(http.ListenAndServe(":8081", router))
 }
 

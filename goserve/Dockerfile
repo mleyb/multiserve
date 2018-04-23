@@ -9,4 +9,5 @@ RUN cd /src && go build -o goserve
 FROM alpine
 WORKDIR /app
 COPY --from=build-env /src/goserve /app/
+EXPOSE 8081
 ENTRYPOINT ./goserve
